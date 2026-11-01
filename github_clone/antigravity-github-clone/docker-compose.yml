@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - JWT_SECRET=antigravity-secret-change-in-production
+      - NODE_ENV=production
+      - STORAGE_PATH=/app/storage/repos
+      - LOCKS_PATH=/app/storage/locks
+    volumes:
+      - ./backend/storage:/app/storage
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5174:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
