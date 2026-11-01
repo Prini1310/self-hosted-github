@@ -18,7 +18,7 @@ function seedMavenWorkspace(repoName) {
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.antigravity</groupId>
+  <groupId>com.vrel</groupId>
   <artifactId>github-clone-test</artifactId>
   <version>1.0-SNAPSHOT</version>
   <properties>
@@ -29,13 +29,13 @@ function seedMavenWorkspace(repoName) {
 
   fs.writeFileSync(path.join(workspacePath, 'pom.xml'), pomContent, 'utf8');
 
-  const appDir = path.join(workspacePath, 'src/main/java/com/antigravity');
+  const appDir = path.join(workspacePath, 'src/main/java/com/vrel');
   fs.mkdirSync(appDir, { recursive: true });
 
-  const appContent = `package com.antigravity;
+  const appContent = `package com.vrel;
 public class App {
     public static void main(String[] args) {
-        System.out.println("Antigravity build OK");
+        System.out.println("VRel build OK");
     }
 }`;
 

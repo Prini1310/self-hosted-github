@@ -3,7 +3,7 @@
 **Builder**: Prabhaharan
 **College**: R.M.D Engineering College, B.Tech IT, 2nd Year
 **Completed**: June 2026
-**Framework**: Antigravity
+**Framework**: Node.js & React
 
 ## Final Stats
 | Metric | Value |
